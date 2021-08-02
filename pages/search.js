@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function Search() {
   return (
     <div>
-      <h1>Home</h1>
+      <h3>Search</h3>
     </div>
   );
 }
