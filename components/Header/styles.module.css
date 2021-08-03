@@ -8,5 +8,5 @@
   @apply bg-secondary p-4 shadow-md text-center;
 }
 .navButton {
-  @apply px-2;
+  @apply px-2 hover:opacity-80;
 }

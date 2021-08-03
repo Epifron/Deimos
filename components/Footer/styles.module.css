@@ -1,0 +1,6 @@
+.footerWrapper {
+  @apply bg-footer p-4;
+}
+.footerButton {
+  @apply hover:opacity-80;
+}
