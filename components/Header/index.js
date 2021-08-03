@@ -18,13 +18,13 @@ export default function Header() {
       </div>
       <div className={styles.navWrapper}>
         <Link href="/about">
-          <a>About</a>
+          <a className={styles.navButton}>About</a>
         </Link>
         <Link href="/contact">
-          <a>Contact</a>
+          <a className={styles.navButton}>Contact</a>
         </Link>
         <Link href="/search">
-          <a>Search</a>
+          <a className={styles.navButton}>Search</a>
         </Link>
       </div>
     </React.Fragment>

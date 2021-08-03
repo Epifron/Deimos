@@ -5,5 +5,8 @@
   @apply mx-auto cursor-pointer;
 }
 .navWrapper {
-  @apply bg-secondary p-4 shadow-md;
+  @apply bg-secondary p-4 shadow-md text-center;
+}
+.navButton {
+  @apply px-2;
 }
