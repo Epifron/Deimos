@@ -12,7 +12,7 @@ export default function Pesquisa() {
         <label className="font-bold">Seu nome:</label>
         <input
           type="text"
-          className="p-4 block shadow bg-input rounded my-1 border-primary"
+          className="p-4 block shadow rounded my-1 border-primary"
         />
       </div>
     </div>

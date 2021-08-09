@@ -11,14 +11,9 @@ module.exports = {
         input: "#EFFBFF",
       },
     },
-    borderColor: (theme) => ({
-      ...theme("colors"),
-      DEFAULT: theme("colors.gray.300", "currentColor"),
-      primary: "#1AC8FF",
-    }),
   },
   variants: {
-    extend: { borderColor: ["active"] },
+    extend: {},
   },
   plugins: [],
 };

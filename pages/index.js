@@ -10,7 +10,7 @@ export default function Home() {
       <div className="text-center my-12">
         <Link href="/pesquisa">
           <a className="bg-button px-12 py-5 font-bold rounded-lg shadow-lg hover:shadow">
-            Dar opnião ou sugestão
+            Dar opinião ou sugestão
           </a>
         </Link>
       </div>
