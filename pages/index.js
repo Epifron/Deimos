@@ -14,7 +14,10 @@ export default function Home() {
           </a>
         </Link>
       </div>
-      <p className="my-12 text-center">Mensagem do desconto.</p>
+      <p className="my-12 text-center">
+        Ao dar sua opnião e/ou sugestão, ganhe 10% de desconto na sua próxima
+        compra.
+      </p>
     </div>
   );
 }

@@ -10,10 +10,7 @@ export default function Pesquisa() {
       </p>
       <div className="w-60 mx-auto mt-2">
         <label className="font-bold">Seu nome:</label>
-        <input
-          type="text"
-          className="p-4 block shadow rounded my-1 border-primary"
-        />
+        <input type="text" className="p-4 block shadow bg-input rounded my-1" />
       </div>
     </div>
   );
