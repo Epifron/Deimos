@@ -1,6 +1,10 @@
 import Link from "next/link";
+import useSWR from "swr";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Home() {
+  const { data, error } = useSWR("/api/get-promo", fetcher);
   return (
     <div>
       <p className="mt-12 text-center">
@@ -14,10 +18,10 @@ export default function Home() {
           </a>
         </Link>
       </div>
-      <p className="my-12 text-center">
-        Ao dar sua opnião e/ou sugestão, ganhe 10% de desconto na sua próxima
-        compra.
-      </p>
+      {!data && <p className="my-12 text-center">Carregando...</p>}
+      {!error && data && data.showCoupon && (
+        <p className="my-12 text-center">{data.message}</p>
+      )}
     </div>
   );
 }
