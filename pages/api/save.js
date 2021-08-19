@@ -1,4 +1,5 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import moment from "moment";
 import credentials from "../../credentials.json";
 
 const doc = new GoogleSpreadsheet(
@@ -13,13 +14,29 @@ export default async (req, res) => {
     const sheet = doc.sheetsByIndex[0];
     const data = JSON.parse(req.body);
 
+    const sheetConfig = doc.sheetsByIndex[1];
+    await sheetConfig.loadCells("A2:B2");
+
+    const mostrarPromocaoCell = sheetConfig.getCell(1, 0);
+
+    const textoCell = sheetConfig.getCell(1, 1);
+
+    let Cupom = "";
+    let Promo = "";
+    if (mostrarPromocaoCell.value === "VERDADEIRO") {
+      Cupom = "temporario";
+      Promo = textoCell.value;
+    }
+
     // Nome	Email	Whatsapp	Cupom	Promo
     await sheet.addRow({
       Nome: data.Nome,
       Email: data.Email,
       Whatsapp: data.Whatsapp,
-      Cupom: "diadospais",
-      Promo: "10%",
+      Nota: 5,
+      "Data Preenchimento": moment().format("DD/MM/YYYY, HH:mm:ss"),
+      Cupom,
+      Promo,
     });
     res.end(req.body);
   } catch (err) {
