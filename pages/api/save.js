@@ -6,6 +6,13 @@ const doc = new GoogleSpreadsheet(
   "1dlfvFydD-m4SCB5IOMCeXE_V6QOC-vcOO9dlULwUMWA"
 );
 
+const genCupom = () => {
+  const code = parseInt(moment().format("YYMMDDHHmmssSSS"))
+    .toString(16)
+    .toUpperCase();
+  return code.substr(0, 4) + "-" + code.substr(4, 4) + "-" + code.substr(8, 4);
+};
+
 export default async (req, res) => {
   try {
     await doc.useServiceAccountAuth(credentials);
@@ -24,7 +31,7 @@ export default async (req, res) => {
     let Cupom = "";
     let Promo = "";
     if (mostrarPromocaoCell.value === "VERDADEIRO") {
-      Cupom = "temporario";
+      Cupom = genCupom();
       Promo = textoCell.value;
     }
 
