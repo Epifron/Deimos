@@ -1,5 +1,6 @@
 import Link from "next/link";
 import useSWR from "swr";
+import PageTitle from "../components/PageTitle";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -7,6 +8,7 @@ export default function Home() {
   const { data, error } = useSWR("/api/get-promo", fetcher);
   return (
     <div>
+      <PageTitle title="Seja Bem-Vindo" />
       <p className="mt-12 text-center">
         O restaurante x sempre busca por atender melhor seus clientes. <br />
         Por isso, estamos sempre abertos a ouvir a sua opnião.

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PageTitle from "../components/PageTitle";
 
 export default function Pesquisa() {
   const [form, setForm] = useState({
@@ -31,6 +32,7 @@ export default function Pesquisa() {
   };
   return (
     <div className="pt-6">
+      <PageTitle title="Pesquisa" />
       <h1 className="my-4 text-center font-bold text-2xl">
         Críticas e sugestões
       </h1>
