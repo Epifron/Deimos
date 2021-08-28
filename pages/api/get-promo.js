@@ -1,5 +1,4 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
-// use this in production import { fromBase64 } from "../../utils/base64";
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
 
