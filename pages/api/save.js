@@ -44,6 +44,8 @@ export default async (req, res) => {
       "Data Preenchimento": moment().format("DD/MM/YYYY, HH:mm:ss"),
       Cupom,
       Promo,
+      Pesquisa: data.Pesquisa,
+      Sugestao: data.Sugestao,
     });
     res.end(
       JSON.stringify({

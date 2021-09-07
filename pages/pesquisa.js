@@ -6,9 +6,17 @@ export default function Pesquisa() {
     Nome: "",
     Email: "",
     Whatsapp: "",
+    Sugestao: "",
     Nota: 0,
+    Pesquisa: "",
   });
   const notas = [0, 1, 2, 3, 4, 5];
+  const pesquisas = [
+    "o Pedido demorou",
+    "o atendimento nao foi bom",
+    "o lanche estava frio",
+    "meu pedido veio errado",
+  ];
   const [sucess, setSucess] = useState(false);
   const [retorno, setRetorno] = useState({});
   const save = async () => {
@@ -69,6 +77,31 @@ export default function Pesquisa() {
             name="Email"
             value={form.Email}
           />
+          <label className="font-bold">Sua Opnião:</label>
+          <input
+            type="text"
+            className="p-4 block shadow bg-input rounded my-3"
+            placeholder="Sugestao"
+            onChange={onChange}
+            name="Sugestao"
+            value={form.Sugestao}
+          />
+          <label className="font-bold">Pesquisa:</label>
+          <div className="flex py-6">
+            {notas.map((pesquisa) => {
+              return (
+                <label className="block w-1/6 text-center">
+                  {pesquisa} <br />
+                  <input
+                    type="radio"
+                    name="Pesquisa"
+                    value={pesquisa}
+                    onChange={onChange}
+                  />
+                </label>
+              );
+            })}
+          </div>
           <label className="font-bold">Nota:</label>
           <div className="flex py-6">
             {notas.map((nota) => {
