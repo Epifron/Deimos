@@ -12,10 +12,10 @@ export default function Pesquisa() {
   });
   const notas = [0, 1, 2, 3, 4, 5];
   const pesquisas = [
-    "o Pedido demorou",
-    "o atendimento nao foi bom",
-    "o lanche estava frio",
-    "meu pedido veio errado",
+    { text: "o Pedido demorou" },
+    { text: "O Pedido tal coisa" },
+    { text: "O Pedido ta ruim" },
+    { text: "O Pedido veio errado" },
   ];
   const [sucess, setSucess] = useState(false);
   const [retorno, setRetorno] = useState({});
@@ -88,18 +88,8 @@ export default function Pesquisa() {
           />
           <label className="font-bold">Pesquisa:</label>
           <div className="flex py-6">
-            {notas.map((pesquisa) => {
-              return (
-                <label className="block w-1/6 text-center">
-                  {pesquisa} <br />
-                  <input
-                    type="radio"
-                    name="Pesquisa"
-                    value={pesquisa}
-                    onChange={onChange}
-                  />
-                </label>
-              );
+            {pesquisas.map(function (d, idx) {
+              return <li key={idx}>{d.text}</li>;
             })}
           </div>
           <label className="font-bold">Nota:</label>
