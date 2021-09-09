@@ -88,17 +88,17 @@ export default function Pesquisa() {
             value={form.Sugestao}
           />
           <label className="font-bold">Pesquisa:</label>
-          <div className="">
+          <div>
             {pesquisas.map((pesquisa) => {
               return (
-                <label className="w-1/6">
+                <label className="block">
                   <input
                     type="radio"
                     name="Pesquisa"
                     value={pesquisa.text}
                     onChange={onChange}
                   />
-                  <label for="Pesquisa">{pesquisa.text}</label>
+                  {pesquisa.text}
                 </label>
               );
             })}
