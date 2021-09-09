@@ -12,6 +12,7 @@ export default function Pesquisa() {
   });
   const notas = [0, 1, 2, 3, 4, 5];
   const pesquisas = [
+    { text: "Nenhum erro ao pedido" },
     { text: "o Pedido demorou" },
     { text: "O Pedido tal coisa" },
     { text: "O Pedido ta ruim" },
@@ -88,12 +89,11 @@ export default function Pesquisa() {
           />
           <label className="font-bold">Pesquisa:</label>
           <div className="">
-            {pesquisas.map((pesquisa, idx) => {
+            {pesquisas.map((pesquisa) => {
               return (
                 <label className="w-1/6">
                   <input
-                    type="checkbox"
-                    id={idx}
+                    type="radio"
                     name="Pesquisa"
                     value={pesquisa.text}
                     onChange={onChange}
