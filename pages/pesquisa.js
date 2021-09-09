@@ -88,17 +88,17 @@ export default function Pesquisa() {
           />
           <label className="font-bold">Pesquisa:</label>
           <div className="">
-            {pesquisas.map(function (d, idx) {
+            {pesquisas.map((pesquisa, idx) => {
               return (
                 <label className="w-1/6">
                   <input
                     type="checkbox"
                     id={idx}
                     name="Pesquisa"
-                    value={d.text}
+                    value={pesquisa.text}
                     onChange={onChange}
                   />
-                  <label for="Pesquisa">{d.text}</label>
+                  <label for="Pesquisa">{pesquisa.text}</label>
                 </label>
               );
             })}
