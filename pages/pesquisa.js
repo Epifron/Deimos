@@ -87,9 +87,20 @@ export default function Pesquisa() {
             value={form.Sugestao}
           />
           <label className="font-bold">Pesquisa:</label>
-          <div className="flex py-6">
+          <div className="">
             {pesquisas.map(function (d, idx) {
-              return <li key={idx}>{d.text}</li>;
+              return (
+                <label className="w-1/6">
+                  <input
+                    type="checkbox"
+                    id={idx}
+                    name="Pesquisa"
+                    value={d.text}
+                    onChange={onChange}
+                  />
+                  <label for="Pesquisa">{d.text}</label>
+                </label>
+              );
             })}
           </div>
           <label className="font-bold">Nota:</label>
